@@ -7,40 +7,6 @@ import re
 import json
 from django.core import serializers
 
-temp = """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-
-<title>AJAX Test</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-</head>
-<body>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#ajax-text-me").click(function() {
-            $.ajax({
-                type: 'GET',
-                async: true,
-                url: '/ajax/',
-                data: "param1=value1&param2=value2;",
-                success: function(data) {
-                    $("#more-text-here1").append(data['first-text']);
-                    $("#more-text-here2").append(data['second-text']);
-                },
-                dataType: 'json',
-            });
-        });
-    });
-</script>
-
-<center><h1><a href="#" id="ajax-text-me">Press me boy I`m AJAX :)</a></h1></center>
-<center><div id="more-text-here1"><br></div></center>
-<center><div id="more-text-here2"></div></center>
-</body>
-</html>"""
-
 
 def form(request):
 
